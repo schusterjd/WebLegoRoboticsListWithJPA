@@ -13,11 +13,11 @@
 <c:forEach items="${requestScope.allLists}" var="currentlist">
 <tr>
 	<td><input type="radio" name="id" value="${currentlist.id}"></td>
-	<td><h2>${currentlist.listName}</h2></td></tr>
-	<tr><td colspan="3">Set Purchase Date: ${currentlist.ownerDate}</td></tr>
-	<tr><td colspan="3">Shopper: ${currentlist.owner.ownerName}</td></tr>
-	<c:forEach var="listVal" items="${currentlist.listOfItems}">
-		<tr><td></td><td colspan="3">${listVal.set}, ${listVal.year}</td></tr>
+	<td><h2>${currentlist.setName}</h2></td></tr>
+	<tr><td colspan="3">Purchase Date: ${currentlist.ownerDate}</td></tr>
+	<tr><td colspan="3">Owner: ${currentlist.owner.ownerName}</td></tr>
+	<c:forEach var="listVal" items="${currentlist.listOfSets}">
+		<tr><td></td><td colspan="3">${listVal.name}, ${listVal.year}</td></tr>
 	</c:forEach>
 </c:forEach>
 </table>
@@ -25,8 +25,7 @@
 <input type="submit" value="delete" name="doThisToList">
 <input type="submit" value="add" name="doThisToList">
 </form>
-<a href="addSetsForListServlet">Create a new List</a>
-<a href="index.html">Insert a new set</a>
-<a href="viewAllListsServlet">View all owners sets</a><br />
+<a href="addSetsForListServlet">Create a new List</a><br />
+<a href="index.html">Insert a new set</a><br />
 </body>
 </html>

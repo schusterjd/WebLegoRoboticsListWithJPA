@@ -31,14 +31,14 @@ public class viewAllListsServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		ListDetailsHelper slh = new ListDetailsHelper();
-		List<ListDetails> abc = slh.getLists();
+		ListDetailsHelper ldh = new ListDetailsHelper();
+		List<ListDetails> abc = ldh.getLists();
 		request.setAttribute("allLists", abc);
 		if (abc.isEmpty()) {
 			request.setAttribute("allLists", " ");
 		}
 		
-		getServletContext().getRequestDispatcher("/shopping-list-by-user.jsp").forward(request, response);
+		getServletContext().getRequestDispatcher("/owner-list-by-user.jsp").forward(request, response);
 		
 	}
 
