@@ -16,8 +16,8 @@ Owner Name: <input type="text" name="ownerName"><br />
 
 Available Sets:<br />
 <select name="allSetsToAdd" multiple size="6">
-<c:forEach items="${requestScope.allItems}" var="currentitem">
-	<option value="${currentitem.id}">${currentitem.set} | ${currentitem.year}</option>
+<c:forEach items="${requestScope.allSets}" var="currentitem">
+	<option value="${currentitem.id}">${currentitem.name} | ${currentitem.year}</option>
 </c:forEach>
 </select>
 <br />
