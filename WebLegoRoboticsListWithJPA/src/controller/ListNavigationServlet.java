@@ -75,8 +75,6 @@ public class ListNavigationServlet extends HttpServlet {
 			}
 			
 		} else if (act.equals("add")) {
-			//on the index page, you call the addSetsForListServlet to get this list
-			//and then pass it on to new-list.jsp
 			getServletContext().getRequestDispatcher("/addSetsForListServlet").forward(request, response);
 		}
 		
