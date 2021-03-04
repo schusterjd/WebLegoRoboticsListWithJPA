@@ -33,11 +33,11 @@ public class ListDetails {
 	private String setName;
 	@Column(name="OWNER_DATE")
 	private LocalDate ownerDate;
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.PERSIST)
 	@JoinColumn(name="OWNER_ID")
 	private Owner owner;
 	@OneToMany(cascade=CascadeType.MERGE, fetch=FetchType.EAGER)
-	@JoinTable(name="SETS_ON_LIST", joinColumns= {@JoinColumn(name="LIST_ID", referencedColumnName="LIST_ID")}, inverseJoinColumns= {@JoinColumn(name="SET_ID", referencedColumnName="ID", unique=true)})
+	@JoinTable(name="sets_on_list", joinColumns= {@JoinColumn(name="LIST_ID", referencedColumnName="LIST_ID")}, inverseJoinColumns= {@JoinColumn(name="SET_ID", referencedColumnName="ID", unique=true)})
 	private List<SetItem> listOfSets;
 	
 	public ListDetails() {
